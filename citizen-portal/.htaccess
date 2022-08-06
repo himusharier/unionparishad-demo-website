@@ -1,0 +1,41 @@
+# ErrorDocument 404 & 403 "Page not found" ---
+ErrorDocument 403 /unionparishad/citizen-portal/not-found.php
+ErrorDocument 404 /unionparishad/citizen-portal/not-found.php
+
+RewriteEngine on
+
+# SSL certificate ---
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Disable Directory Browsing ---
+Options All -Indexes
+
+# Configure index page ---
+DirectoryIndex user-login.php
+
+# Script Pages ---
+RewriteRule ^script/user_login_script$ bkend-call/user-login-checkUser.php
+
+
+# Content Pages ---
+RewriteRule ^login$ user-login.php
+RewriteRule ^citizen/logout$ bkend-call/user-logout.php
+RewriteRule ^citizen/dashboard$ user-dashboard.php?pageId=dashboard&menuId=dashboard
+RewriteRule ^citizen/holding-tax$ user-dashboard.php?pageId=holding-tax&menuId=holding-tax
+RewriteRule ^citizen/holding-tax-details$ user-dashboard.php?pageId=holding-tax-details&menuId=holding-tax
+RewriteRule ^citizen/trade-licence-renew$ user-dashboard.php?pageId=trade-licence-renew&menuId=trade-licence-renew
+RewriteRule ^citizen/trade-licence-renew-details$ user-dashboard.php?pageId=trade-licence-renew-details&menuId=trade-licence-renew
+RewriteRule ^citizen/trade-licence-new-application$ user-dashboard.php?pageId=trade-licence-new-application&menuId=trade-licence-new-application
+RewriteRule ^citizen/character-certificate$ user-dashboard.php?pageId=character-certificate&menuId=character-certificate
+RewriteRule ^citizen/character-certificate-details$ user-dashboard.php?pageId=character-certificate-details&menuId=character-certificate
+RewriteRule ^citizen/unmarried-certificate$ user-dashboard.php?pageId=unmarried-certificate&menuId=unmarried-certificate
+RewriteRule ^citizen/unmarried-certificate-details$ user-dashboard.php?pageId=unmarried-certificate-details&menuId=unmarried-certificate
+RewriteRule ^citizen/death-certificate$ user-dashboard.php?pageId=death-certificate&menuId=death-certificate
+RewriteRule ^citizen/death-certificate-details$ user-dashboard.php?pageId=death-certificate-details&menuId=death-certificate
+RewriteRule ^citizen/burial-certificate$ user-dashboard.php?pageId=burial-certificate&menuId=burial-certificate
+RewriteRule ^citizen/burial-certificate-details$ user-dashboard.php?pageId=burial-certificate-details&menuId=burial-certificate
+RewriteRule ^citizen/remarriage-certificate$ user-dashboard.php?pageId=remarriage-certificate&menuId=remarriage-certificate
+RewriteRule ^citizen/remarriage-certificate-details$ user-dashboard.php?pageId=remarriage-certificate-details&menuId=remarriage-certificate
+RewriteRule ^citizen/legacy-certificate$ user-dashboard.php?pageId=legacy-certificate&menuId=legacy-certificate
+RewriteRule ^citizen/legacy-certificate-details$ user-dashboard.php?pageId=legacy-certificate-details&menuId=legacy-certificate

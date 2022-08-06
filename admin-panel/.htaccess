@@ -1,0 +1,75 @@
+# ErrorDocument 404 & 403 "Page not found" ---
+ErrorDocument 403 /unionparishad/admin-panel/not-found.php
+ErrorDocument 404 /unionparishad/admin-panel/not-found.php
+
+RewriteEngine on
+
+# SSL certificate ---
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Disable Directory Browsing ---
+Options All -Indexes
+
+# Configure index page ---
+DirectoryIndex admin-login.php
+
+# Script Pages ---
+RewriteRule ^script/admin_login_script$ bkend-call/admin-login-checkUser.php
+RewriteRule ^script/holding-form-data-insert$ bkend-call/holding-form-data-insert.php
+RewriteRule ^script/holding-single-data-show$ bkend-call/holding-single-data-show.php
+RewriteRule ^script/holding-single-data-update$ bkend-call/holding-single-data-update.php
+RewriteRule ^script/trade-lic-form-data-insert$ bkend-call/trade-lic-form-data-insert.php
+RewriteRule ^script/trade-lic-single-data-show$ bkend-call/trade-lic-single-data-show.php
+RewriteRule ^script/trade-lic-single-data-update$ bkend-call/trade-lic-single-data-update.php
+RewriteRule ^script/certificate-verification$ bkend-call/certificate-verification-script.php
+RewriteRule ^script/certificate-single-data-show$ bkend-call/certificate-single-data-show.php
+RewriteRule ^script/allowance-given-script-step1$ bkend-call/allowance-given-script-step1.php
+RewriteRule ^script/allowance-given-script-step2$ bkend-call/allowance-given-script-step2.php
+RewriteRule ^script/allowance-given-script-step-edit$ bkend-call/allowance-given-script-step-edit.php
+RewriteRule ^script/allowance-given-script-step-edit-2$ bkend-call/allowance-given-script-step-edit-2.php
+RewriteRule ^script/allowance-given-script-step-edit-delete$ bkend-call/allowance-given-script-step-edit-delete.php
+RewriteRule ^script/renew-house-holding-script-step1$ bkend-call/renew-house-holding-script-step1.php
+RewriteRule ^script/renew-house-holding-script-step2$ bkend-call/renew-house-holding-script-step2.php
+RewriteRule ^script/renew-house-holding-script-step-edit$ bkend-call/renew-house-holding-script-step-edit.php
+RewriteRule ^script/renew-house-holding-script-step-edit-2$ bkend-call/renew-house-holding-script-step-edit-2.php
+RewriteRule ^script/renew-house-holding-script-step-edit-delete$ bkend-call/renew-house-holding-script-step-edit-delete.php
+
+RewriteRule ^script/renew-trade-licence-script-step1$ bkend-call/renew-trade-licence-script-step1.php
+RewriteRule ^script/renew-trade-licence-script-step2$ bkend-call/renew-trade-licence-script-step2.php
+RewriteRule ^script/renew-trade-licence-script-step-edit$ bkend-call/renew-trade-licence-script-step-edit.php
+RewriteRule ^script/renew-trade-licence-script-step-edit-2$ bkend-call/renew-trade-licence-script-step-edit-2.php
+RewriteRule ^script/renew-trade-licence-script-step-edit-delete$ bkend-call/renew-trade-licence-script-step-edit-delete.php
+
+# Content Pages ---
+RewriteRule ^login$ admin-login.php
+RewriteRule ^admin/logout$ bkend-call/admin-logout.php
+RewriteRule ^admin/dashboard$ admin-dashboard.php?pageId=dashboard
+RewriteRule ^admin/add-house-holding$ admin-dashboard.php?pageId=house-holding-add
+RewriteRule ^admin/list-house-holding$ admin-dashboard.php?pageId=house-holding-list [L,QSA]
+RewriteRule ^admin/add-trade-license$ admin-dashboard.php?pageId=trade-lic-add
+RewriteRule ^admin/list-trade-license$ admin-dashboard.php?pageId=trade-lic-list
+RewriteRule ^admin/update-house-holding$ admin-dashboard.php?pageId=house-holding-data-update
+RewriteRule ^admin/update-trade-license$ admin-dashboard.php?pageId=trade-lic-data-update
+RewriteRule ^house-holding-search/([a-zA-Z0-9-১২৩৪৫৬৭৮৯০]+)$ admin-dashboard.php?pageId=house-holding-search&searchKey=$1
+RewriteRule ^trade-lic-search/([a-zA-Z0-9-১২৩৪৫৬৭৮৯০]+)$ admin-dashboard.php?pageId=trade-lic-search&searchKey=$1
+RewriteRule ^admin/university-student-list$ admin-dashboard.php?pageId=university-student-all-data
+RewriteRule ^admin/disability-list$ admin-dashboard.php?pageId=disability-all-data [L,QSA]
+RewriteRule ^admin/freedom-fighter-list$ admin-dashboard.php?pageId=freedom-fighter-all-data [L,QSA]
+RewriteRule ^admin/allowance-list$ admin-dashboard.php?pageId=allowance-all-data [L,QSA]
+
+RewriteRule ^admin/certificate-application$ admin-dashboard.php?pageId=certificate-application&subPage=general
+RewriteRule ^admin/certificate-application-urgent$ admin-dashboard.php?pageId=certificate-application&subPage=urgent
+RewriteRule ^admin/certificate-application-general$ admin-dashboard.php?pageId=certificate-application&subPage=general
+RewriteRule ^admin/certificate-application-archive$ admin-dashboard.php?pageId=certificate-application&subPage=archive
+
+RewriteRule ^admin/certificate-verify$ admin-dashboard.php?pageId=certificate-verify
+RewriteRule ^admin/allowance-given-data$ admin-dashboard.php?pageId=allowance-given-data
+RewriteRule ^admin/renew-house-holding$ admin-dashboard.php?pageId=renew-house-holding
+RewriteRule ^admin/renew-trade-licence$ admin-dashboard.php?pageId=renew-trade-licence
+
+RewriteRule ^admin/trade-licence-new-application$ admin-dashboard.php?pageId=trade-licence-new-application
+
+RewriteRule ^admin/operator-data-entry$ admin-dashboard.php?pageId=operator-all-entry-data
+
+RewriteRule ^admin/active-house-holding$ admin-dashboard.php?pageId=house-holding-active-list [L,QSA]
