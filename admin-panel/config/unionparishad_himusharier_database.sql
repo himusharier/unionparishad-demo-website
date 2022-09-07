@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2022 at 10:14 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.20
+-- Generation Time: Sep 07, 2022 at 08:43 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -98,6 +98,14 @@ CREATE TABLE `character_certificate_apply` (
   `status` varchar(20) NOT NULL,
   `statusBy` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `character_certificate_apply`
+--
+
+INSERT INTO `character_certificate_apply` (`id`, `linkedForm`, `certificateID`, `fullName`, `guardianName`, `motherName`, `nidNo`, `birthDate`, `village`, `wardNo`, `upozilla`, `zilla`, `regStatus`, `paymentStatus`, `applyDate`, `applyType`, `ipAddress`, `status`, `statusBy`) VALUES
+(1, '94650809202203419', '2063541987', 'শাহরিয়ার কবির', 'কবির হোসেন', 'জাকিয়া সুলতানা', '4160000000', '1997-09-08', 'শেখহাটী খাঁ পাড়া', '4', 'সদর', 'যশোর', 'Done', 'Unpaid', '08-09-2022', 'সাধারণ', '::1', 'Requested', ''),
+(2, '94650809202203419', '9852760134', 'শাহরিয়ার কবির', 'কবির হোসেন', 'জাকিয়া সুলতানা', '4160000000', '2022-09-08', 'শেখহাটী খাঁ পাড়া', '4', 'সদর', 'যশোর', 'Done', 'Paid', '08-09-2022', 'সাধারণ', '::1', 'Requested', '');
 
 -- --------------------------------------------------------
 
@@ -214,6 +222,13 @@ CREATE TABLE `house_holding_database` (
   `dataEntryBy` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `house_holding_database`
+--
+
+INSERT INTO `house_holding_database` (`id`, `formID`, `lastUpdate`, `lastIP`, `idNumber`, `pinNumber`, `cardStatus`, `holdingType`, `personName`, `guardianType`, `guardianName`, `motherName`, `gender`, `maritalStatus`, `birthDate`, `idType`, `idNo`, `mobile`, `religion`, `familyCondition`, `maleNumber`, `femaleNumber`, `applicationFee`, `paymentType`, `allowanceType`, `allowanceAmount`, `disability`, `freedomFighter`, `waterConnection`, `nidHolder`, `isVoter`, `landAmount`, `holdingNo`, `wardNo`, `village`, `zip`, `post`, `electricity`, `sanitation`, `houseType`, `totalHouse`, `occupation`, `lastTaxDate`, `unemployedMember`, `workerMember`, `voterNumber`, `homeLandAmount`, `agriLandAmount`, `maleDisabilityNumber`, `femaleDisabilityNumber`, `maleChildNumber`, `femaleChildNumber`, `isAllowance`, `allowanceMember`, `disabilityNumber`, `familyIncome`, `isChildEducation`, `childEducationNumber`, `personAge`, `totalFamilyMember`, `dataEntryBy`) VALUES
+(1, '94650809202203419', '08-09-2022', '::1', 'id123456', '123456', 'সক্রিয়', 'আবাসিক হোল্ডিং', 'শাহরিয়ার কবির', '', 'কবির হোসেন', 'জাকিয়া সুলতানা', 'পুরুষ', '', '', '', '4160000000', '01800000000', 'ইসলাম', 'মধ্যবিত্ত', '2', '2', '200', 'নগদ টাকা', '', '', 'না', 'না', 'হ্যাঁ', '', 'হ্যাঁ', '20', '824', '4', 'শেখহাটী খাঁ পাড়া', '7400', 'শিক্ষাবোর্ড', 'হ্যাঁ', 'পাকা', 'পাকা ১ তলা', '', 'চাকরি', '2022', '2', '1', '3', '5', '15', '', '', '', '', 'না', '', '', '100000', 'হ্যাঁ', '2', '25', '4', '111');
+
 -- --------------------------------------------------------
 
 --
@@ -226,6 +241,14 @@ CREATE TABLE `house_holding_database_children` (
   `personName` varchar(300) NOT NULL,
   `personAge` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `house_holding_database_children`
+--
+
+INSERT INTO `house_holding_database_children` (`id`, `linkedForm`, `personName`, `personAge`) VALUES
+(1, '94650809202203419', 'আদ্রিতা', '12'),
+(2, '94650809202203419', 'রাজন', '18');
 
 -- --------------------------------------------------------
 
@@ -342,6 +365,13 @@ CREATE TABLE `renew_house_holding_database` (
   `ipAddress` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `renew_house_holding_database`
+--
+
+INSERT INTO `renew_house_holding_database` (`id`, `linkedForm`, `renewHoldingID`, `fullName`, `mobile`, `renewStartDate`, `renewEndDate`, `holdingFee`, `feeDiscount`, `payableAmount`, `paymentStatus`, `entryBy`, `entryDate`, `ipAddress`) VALUES
+(1, '94650809202203419', '0291437658', 'শাহরিয়ার কবির', '01800000000', '2022-09-08', '2023-09-08', '200', '50', '150', 'Unpaid', '111', '08-09-2022', '::1');
+
 -- --------------------------------------------------------
 
 --
@@ -455,7 +485,7 @@ CREATE TABLE `user_admin` (
 --
 
 INSERT INTO `user_admin` (`id`, `user_id`, `role`, `username`, `password`, `full_name`, `activation_status`) VALUES
-(1, '111', 'admin', 'admin', 'admin@123demo1', 'Admin', 'active'),
+(1, '111', 'admin', 'admin@demo123', 'demoacc123', 'Admin', 'active'),
 (2, '0001', 'operator', 'operator-1', '854571', 'Operator 01', 'active'),
 (3, '0002', 'operator', 'operator-2', '979062', 'Operator 02', 'active'),
 (4, '0003', 'operator', 'operator-3', '785566', 'Operator 03', 'active'),
@@ -607,7 +637,7 @@ ALTER TABLE `burial_certificate_apply`
 -- AUTO_INCREMENT for table `character_certificate_apply`
 --
 ALTER TABLE `character_certificate_apply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact_forms`
@@ -625,13 +655,13 @@ ALTER TABLE `death_certificate_apply`
 -- AUTO_INCREMENT for table `house_holding_database`
 --
 ALTER TABLE `house_holding_database`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `house_holding_database_children`
 --
 ALTER TABLE `house_holding_database_children`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `house_holding_database_family`
@@ -661,7 +691,7 @@ ALTER TABLE `remarriage_certificate_apply`
 -- AUTO_INCREMENT for table `renew_house_holding_database`
 --
 ALTER TABLE `renew_house_holding_database`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `renew_trade_licence_database`
