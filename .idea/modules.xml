@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../haratiunionparishad.admin/.idea/haratiunionparishad.admin.iml" filepath="$PROJECT_DIR$/../haratiunionparishad.admin/.idea/haratiunionparishad.admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/unionparishad-demoSite.iml" filepath="$PROJECT_DIR$/.idea/unionparishad-demoSite.iml" />
     </modules>
   </component>
