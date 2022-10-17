@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../buRadio.portal/.idea/buRadio.portal.iml" filepath="$PROJECT_DIR$/../buRadio.portal/.idea/buRadio.portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../busfair-dashboard/.idea/busfair-dashboard.iml" filepath="$PROJECT_DIR$/../busfair-dashboard/.idea/busfair-dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/../haratiunionparishad.admin/.idea/haratiunionparishad.admin.iml" filepath="$PROJECT_DIR$/../haratiunionparishad.admin/.idea/haratiunionparishad.admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/unionparishad-demoSite.iml" filepath="$PROJECT_DIR$/.idea/unionparishad-demoSite.iml" />
     </modules>
