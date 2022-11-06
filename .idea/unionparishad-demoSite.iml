@@ -7,5 +7,6 @@
     <orderEntry type="module" module-name="haratiunionparishad.admin" />
     <orderEntry type="module" module-name="buRadio.portal" />
     <orderEntry type="module" module-name="busfair-dashboard" />
+    <orderEntry type="module" module-name="bimtransfer-project" />
   </component>
 </module>
